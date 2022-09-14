@@ -1,0 +1,132 @@
+body,
+html {
+  line-height: 1.2;
+  font-family: "PingFang SC", "STHeitiSC-Light", "Helvetica-Light", arial,
+    sans-serif, "Droid Sans Fallback";
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: $bg-color;
+  color: $text-color;
+  font-size: $font-size-sm;
+}
+
+.g-relative {
+  position: relative;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.3s;
+}
+
+.list-enter-from,
+.list-leave-to {
+  height: 0 !important;
+}
+
+@keyframes clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes contrarotate {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.van-dropdown-menu__bar {
+  height: 30px!important;
+  padding-bottom: 5px;
+  background-color: transparent!important;
+  justify-content: space-between;
+  box-shadow: none!important;
+}
+.van-dropdown-menu__item {
+  margin: 0 3px;
+  background-image: linear-gradient(180deg, #E9F4FF 0%, #C3E0FE 100%);
+  border-radius: 5px;
+  .van-dropdown-menu__title {
+    font-size: 13px;
+    color: $color-primary;
+    &:after {
+      border-color: transparent transparent $color-primary $color-primary
+    }
+  }
+}
+// 设置最小高度 扩大下拉刷新区域
+.van-list{
+  min-height: 80vh;
+}
+
+
+@keyframes slide-left-enter {
+  from {
+    //transform: translate3d(-100%, 0, 0);
+    left: 100%
+  }
+}
+
+@keyframes slide-left-leave {
+  to {
+    //transform: translate3d(-100%, 0, 0);
+    left: 100%
+  }
+}
+
+@keyframes slide-right-enter {
+  from {
+    //transform: translate3d(100%, 0, 0);
+    left: -100%
+  }
+}
+
+@keyframes slide-right-leave {
+  to {
+    //transform: translate3d(100%, 0, 0);
+    left: -100%
+
+  }
+}
+.slide-left {
+  &-enter-active {
+    animation: slide-left-enter var(--van-animation-duration-base) both
+    var(--van-animation-timing-function-enter);
+  }
+
+  &-leave-active {
+    animation: slide-left-leave var(--van-animation-duration-base) both
+    var(--van-animation-timing-function-leave);
+  }
+}
+
+.slide-right {
+  &-enter-active {
+    animation: slide-right-enter var(--van-animation-duration-base) both
+    var(--van-animation-timing-function-enter);
+  }
+
+  &-leave-active {
+    animation: slide-right-leave var(--van-animation-duration-base) both
+    var(--van-animation-timing-function-leave);
+  }
+}
